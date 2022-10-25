@@ -17,3 +17,5 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: echo "Firebase secret view {{ secrets.FIREBASE_SECRETS }}"
+      - run: echo "Firebase secret view {{ secrets.SECRETS_TEST_STRING }}"
+      
