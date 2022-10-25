@@ -45,4 +45,11 @@ jobs:
         env:
           LEVEL: ${{ inputs.logLevel }}
           TAGS: ${{ inputs.tags }}
-      - run: LEVEL=${{ inputs.logLevel }} TAGS=${{ inputs.tags }} FIREBASE_SECRETS='${{ secrets.FIREBASE_SECRETS }}' node ./showEnv.js
+      - run: LEVEL=${{ inputs.logLevel }} TAGS=${{ inputs.tags }} FIREBASE_SECRETS='${{ secrets.ENCODE_FIREBASE_SECRETS }}' node ./showEnv.js
+      - run: |
+          node ./showEnv.js
+        env:
+          LEVEL: ${{ inputs.logLevel }}
+          TAGS: ${{ inputs.tags }}
+          FIREBASE_SECRETS: '${{ secrets.ENCODE_FIREBASE_SECRETS }}'
+          
