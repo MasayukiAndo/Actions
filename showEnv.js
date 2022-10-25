@@ -18,6 +18,6 @@ showEnv(env.SECRETS_TEST_STRING);
 
 const firebaseSecret =  JSON.parse(env.FIREBASE_SECRETS);
 
-console.log(firebaseSecret['apiKey']);
-console.log(firebaseSecret['authDomain']);
-console.log(firebaseSecret['projectId']);
+console.log(firebaseSecret.apiKey);
+console.log(firebaseSecret.authDomain);
+console.log(firebaseSecret.projectId);
