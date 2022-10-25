@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
 
     environment:
-      name: ${{ github.ref }}
+      name: ${{ inputs.environment }}
     steps:
       - name: Use Node.js
         uses: actions/setup-node@v3.2.0
