@@ -23,6 +23,8 @@ on:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.environment }}    
     steps:
       - name: Use Node.js
         uses: actions/setup-node@v3.2.0
