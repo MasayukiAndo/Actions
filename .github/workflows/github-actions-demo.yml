@@ -23,6 +23,9 @@ on:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+
+    environment:
+      name: ${{ github.ref }}
     steps:
       - name: Use Node.js
         uses: actions/setup-node@v3.2.0
@@ -47,10 +50,14 @@ jobs:
           echo "Log level: $LEVEL"
           echo "Tags: $TAGS"
           echo "Environment: $ENVIRONMENT"
+          echo "Env Name Is: $ENV_NAME_IS"
+          echo "Github Ref: $GITHUB_REF"
         env:
           LEVEL: ${{ inputs.logLevel }}
           TAGS: ${{ inputs.tags }}
           ENVIRONMENT: ${{ inputs.environment }}
+          ENV_NAME_IS: ${{ secrets.ENV_NAME_IS }}
+          GITHUB_REF: ${{ github.ref }}
       - run: LEVEL=${{ inputs.logLevel }} TAGS=${{ inputs.tags }} FIREBASE_SECRETS='${{ secrets.ENCODE_FIREBASE_SECRETS }}' node ./showEnv.js
       - run: |
           node ./showEnv.js
