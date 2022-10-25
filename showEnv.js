@@ -1,3 +1,4 @@
+
 function showEnv(srcStr) {
   let str
   for (var i = 0; i < srcStr.length; i++) {
@@ -15,7 +16,7 @@ showEnv(env.ENV_NAME_IS);
 showEnv(env.FIREBASE_SECRETS);
 showEnv(env.SECRETS_TEST_STRING);
 
-const firebaseSecret = env.FIREBASE_SECRETS;
+const firebaseSecret =  JSON.parse(env.FIREBASE_SECRETS);
 
 console.log(firebaseSecret['apiKey']);
 console.log(firebaseSecret['authDomain']);
