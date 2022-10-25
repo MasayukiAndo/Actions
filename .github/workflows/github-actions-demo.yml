@@ -20,11 +20,13 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - run: git checkout main
       - name: Use Node.js
         uses: actions/setup-node@v3.2.0
         with:
           node-version: '14.x'
       - run: node --version
+      - run: ls
       - run: cd .. && ls
       - run: pwd
 #       - run: node ./showEnv.js
