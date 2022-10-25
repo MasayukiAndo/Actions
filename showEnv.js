@@ -8,3 +8,8 @@ console.log('FIREBASE_SECRETS');
 console.log(env.FIREBASE_SECRETS);
 console.log('SECRETS_TEST_STRING');
 console.log(env.SECRETS_TEST_STRING);
+
+str = env.SECRETS_TEST_STRING;
+for (var i = 0; i < str.length; i++) {
+  console.log(str[i]);
+}
