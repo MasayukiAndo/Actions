@@ -16,6 +16,10 @@ on:
         description: 'Test scenario tags'
         required: false
         type: boolean
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -42,9 +46,11 @@ jobs:
       - run: |
           echo "Log level: $LEVEL"
           echo "Tags: $TAGS"
+          echo "Environment: $ENVIRONMENT"
         env:
           LEVEL: ${{ inputs.logLevel }}
           TAGS: ${{ inputs.tags }}
+          ENVIRONMENT: ${{ inputs.environment }}
       - run: LEVEL=${{ inputs.logLevel }} TAGS=${{ inputs.tags }} FIREBASE_SECRETS='${{ secrets.ENCODE_FIREBASE_SECRETS }}' node ./showEnv.js
       - run: |
           node ./showEnv.js
