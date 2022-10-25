@@ -46,6 +46,7 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: echo "Firebase secret view ${{ secrets.FIREBASE_SECRETS }}"
       - run: echo "test string secret view ${{ secrets.SECRETS_TEST_STRING }}"
+      - run: echo "Env Name Is ${{ secrets.ENV_NAME_IS }}"
       - run: |
           echo "Log level: $LEVEL"
           echo "Tags: $TAGS"
