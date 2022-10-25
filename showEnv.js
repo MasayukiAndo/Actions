@@ -1,3 +1,11 @@
+def showEnv(srcStr) {
+  let str
+  for (var i = 0; i < srcStr.length; i++) {
+    str += srcStr[i] + ' ';
+  }
+  console.log(str)
+}
+
 const env = process.env;
 console.log(env.LEVEL);
 console.log(env.TAGS);
@@ -9,7 +17,6 @@ console.log(env.FIREBASE_SECRETS);
 console.log('SECRETS_TEST_STRING');
 console.log(env.SECRETS_TEST_STRING);
 
-str = env.SECRETS_TEST_STRING;
-for (var i = 0; i < str.length; i++) {
-  console.log(str[i]);
-}
+showEnv(env.ENV_NAME_IS);
+showEnv(env.FIREBASE_SECRETS);
+showEnv(env.SECRETS_TEST_STRING);
