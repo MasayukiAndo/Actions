@@ -18,6 +18,8 @@ showEnv(env.SECRETS_TEST_STRING);
 
 const firebaseSecret = env.FIREBASE_SECRETS
 
-console.log(firebaseSecret.apiKey);
-console.log(firebaseSecret.authDomain);
-console.log(firebaseSecret.projectId);
+console.log('JSON.stringify');
+console.log(JSON.stringify(firebaseSecret));
+
+console.log('console.dir');
+console.dir(firebaseSecret);
