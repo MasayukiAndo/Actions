@@ -66,6 +66,6 @@ jobs:
           TAGS: ${{ inputs.tags }}
           FIREBASE_SECRETS: '${{ secrets.ENCODE_FIREBASE_SECRETS }}'
           ENV_NAME_IS: ${{ secrets.ENV_NAME_IS }}
-          SECRETS_TEST_STRING: ${{ github.ref }}
+          SECRETS_TEST_STRING: ${{ secrets.SECRETS_TEST_STRING }}
           
           
