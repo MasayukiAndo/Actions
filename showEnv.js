@@ -1,4 +1,4 @@
-def showEnv(srcStr) {
+function showEnv(srcStr) {
   let str
   for (var i = 0; i < srcStr.length; i++) {
     str += srcStr[i] + ' ';
