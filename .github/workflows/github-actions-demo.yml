@@ -59,7 +59,6 @@ jobs:
           ENV_NAME_IS: ${{ secrets.ENV_NAME_IS }}
           SECRETS_TEST_STRING: ${{ secrets.SECRETS_TEST_STRING }}
           GITHUB_REF: ${{ github.ref }}
-      - run: LEVEL=${{ inputs.logLevel }} TAGS=${{ inputs.tags }} FIREBASE_SECRETS='${{ secrets.ENCODE_FIREBASE_SECRETS }}' node ./showEnv.js
       - run: |
           node ./showEnv.js
         env:
@@ -67,4 +66,6 @@ jobs:
           TAGS: ${{ inputs.tags }}
           FIREBASE_SECRETS: '${{ secrets.ENCODE_FIREBASE_SECRETS }}'
           ENV_NAME_IS: ${{ secrets.ENV_NAME_IS }}
+          SECRETS_TEST_STRING: ${{ github.ref }}
+          
           
